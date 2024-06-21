@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ 
+ body{
+  background-color: white;
+  scroll-behavior: smooth;
+ 
+ }
+
+ th,td{
+    border-bottom: 1px solid #ececec;
+    padding: 8px;
+    text-align: left;
+ }
+
+ select,textarea,input{
+   @apply w-full px-3 py-2 border border-gray-400 text-black bg-white rounded-md focus:outline-none focus:border-cyan-700
+ 
+ }
+
+
+  tbody tr:nth-child(even) {
+  background-color: #e1eaf8;  
+  
+}
