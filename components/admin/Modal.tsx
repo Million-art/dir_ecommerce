@@ -58,25 +58,27 @@ const Modal: React.FC<PropsTypes> = ({ setOpenPopup, setUpdateTable }) => {
 
     try {
       const res = await fetch(`/api/edit_product/${productData._id}`, {
-        method: 'PUT', // Adjust HTTP method based on your API endpoint
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(editedProduct),
       });
-
+    
       if (res.ok) {
         toast.success('Product edited successfully!');
         setUpdateTable((prev) => !prev);
         setOpenPopup(false);
         // Optionally reset form fields here if needed
       } else {
+        const errorData = await res.json();
         setLoading(false);
-        throw new Error('Failed to edit product.');
+        toast.error('Product edit not successfully!');
+
+        throw new Error(`Failed to edit product: ${errorData.message}`);
       }
     } catch (error) {
-      setLoading(false);
-      toast.error('Failed to edit product. Please try again later.');
+ 
     }
   };
 
