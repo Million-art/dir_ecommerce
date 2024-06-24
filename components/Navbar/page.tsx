@@ -17,22 +17,10 @@ const Navbar: React.FC<NavbarProps> = ({ setShowCart }) => {
   const cartCount = cartItems.length;
 
   const navItems = [
-    {
-      label: 'Home',
-      href: '/'
-    },
-    {
-      label: 'Products',
-      href: '/products'
-    },
-    {
-      label: 'Contact Us',
-      href: '/contact'
-    },
-    {
-      label: 'About Us',
-      href: '/about'
-    },
+    { label: 'Home', href: '/' },
+    { label: 'Products', href: '/products' },
+    { label: 'Contact Us', href: '/contact' },
+    { label: 'About Us', href: '/about' },
   ];
 
   const toggleMenu = () => {
@@ -44,11 +32,11 @@ const Navbar: React.FC<NavbarProps> = ({ setShowCart }) => {
   };
 
   return (
-    <nav className="bg-purple-700 h-fit px-4 py-2 sticky top-0 mb-0 z-100 text-white  ">
+    <nav className="bg-gradient-to-r from-black to-purple-500 h-fit px-4 py-2 sticky top-0 mb-0 z-10 text-white">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="font-bold text-2xl flex  md:text-3xl relative">
-          <h1>Dir...</h1>
-         </Link>
+        <Link href="/" className="font-bold text-2xl flex md:text-3xl relative">
+          <h1><b className='text-white'>DIR COMMERCE</b></h1>
+        </Link>
         <div className="md:hidden">
           <button className="focus:outline-none" onClick={toggleMenu}>
             <svg
@@ -70,13 +58,13 @@ const Navbar: React.FC<NavbarProps> = ({ setShowCart }) => {
           </button>
         </div>
         <div
-          className={`bg-purple-700 flex-col mt-4 pl-5 py-5 gap-4 md:flex md:flex-row md:mt-0 md:gap-5 ${
-            isMenuOpen ? 'flex absolute bg-dark justify-start z-50' : 'hidden'
+          className={`flex-col mt-4 pl-5 py-5 gap-4 md:flex md:flex-row md:mt-0 md:gap-5 ${
+            isMenuOpen ? 'bg-black flex absolute bg-dark justify-start z-100' : 'hidden'
           } absolute text-white bg-blue mt-96 left-0 right-0 md:bottom-0 md:static`}
         >
           {navItems.map((item, index) => (
             <li key={index} className="list-none">
-             <Link href={item.href} className="block lg:inline-block font-medium hover:text-yellow-500">
+              <Link href={item.href} className="block lg:inline-block font-medium hover:text-yellow-500">
                 {item.label}
               </Link>
             </li>
@@ -88,7 +76,8 @@ const Navbar: React.FC<NavbarProps> = ({ setShowCart }) => {
           </div>
 
           {isLoaded && !user ? (
-            <Link href="/sign-in"   className="text-darkGray hover:text-golden dark:text-white">Login 
+            <Link href="/sign-in" className="text-darkGray hover:text-golden dark:text-white">
+              Login
             </Link>
           ) : (
             <UserButton afterSignOutUrl="/" />
