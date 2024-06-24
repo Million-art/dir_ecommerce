@@ -5,7 +5,7 @@ import { MyProduct } from '@/types/types';
 import { FaTrash, FaEdit } from 'react-icons/fa';
 import Image from 'next/image';
 import { toast } from 'react-toastify';
-
+ 
 interface ProductRowsProps {
   id: number;
   setOpenPopup: React.Dispatch<React.SetStateAction<boolean>>;
@@ -31,7 +31,9 @@ const ProductRows: React.FC<ProductRowsProps> = ({
     setShowConfirmation(true); // Show confirmation popup
   };
 
-  const handleConfirmDelete = async () => {
+  const handleConfirmDelete = async (product: MyProduct) => {
+
+    
     try {
       const response = await fetch(`/api/delete_product/${product._id}`, {
         method: 'DELETE',
@@ -74,10 +76,10 @@ const ProductRows: React.FC<ProductRowsProps> = ({
       </td>
       <td>
         <div className="flex gap-2">
-          <div onClick={handleEdit}>
+          <div onClick={handleEdit} className='hover:text-emerald-500'>
             <FaEdit />
           </div>
-          <div onClick={handleDelete}>
+          <div onClick={handleDelete} className='hover:text-red-500'>
             <FaTrash />
           </div>
         </div>
@@ -94,7 +96,7 @@ const ProductRows: React.FC<ProductRowsProps> = ({
             <div className="flex gap-4 mt-4">
               <button
                 className="bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded"
-                onClick={handleConfirmDelete}
+                onClick={()=>handleConfirmDelete(product)}
               >
                 Yes
               </button>

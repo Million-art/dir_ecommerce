@@ -1,15 +1,17 @@
 import React from 'react';
  import Navbar from '@/components/Navbar/page';
+ import Home from './home/page'
 import Providers from './StoreProvider';
 
 interface HomeProps {
   children: React.ReactNode;
 }
 
-const Home: React.FC<HomeProps> = ({ children }) => {
+const index: React.FC<HomeProps> = ({ children }) => {
   return (
     <div className='h-full w-full'>
       <Navbar />
+      <Home />
       <Providers >
         {children}
       </Providers>
@@ -17,4 +19,4 @@ const Home: React.FC<HomeProps> = ({ children }) => {
   );
 };
 
-export default Home;
+export default index;

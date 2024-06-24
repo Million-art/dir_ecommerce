@@ -15,7 +15,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <div className="w-full h-screen flex justify-center items-center align-middle">
       {isLoading ? (
-        <span className="loading loading-spinner text-primary w-16 h-16"></span>
+        <span className="loading loading-spinner text-purple-700 w-16 h-16"></span>
       ) : (
         children
       )}
