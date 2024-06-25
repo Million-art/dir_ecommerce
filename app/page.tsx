@@ -1,22 +1,16 @@
 import React from 'react';
- import Navbar from '@/components/Navbar/page';
- import Home from './home/page'
+import Navbar from '@/components/Navbar/page';
+import Home from './home/page';
 import Providers from './StoreProvider';
 
-interface HomeProps {
-  children: React.ReactNode;
-}
-
-const index: React.FC<HomeProps> = ({ children }) => {
+const Index: React.FC = ({ children }:any) => {
   return (
-    <div className='h-full w-full'>
+    <div className="h-full w-full">
       <Navbar />
       <Home />
-      <Providers >
-        {children}
-      </Providers>
+      <Providers>{children}</Providers>
     </div>
   );
 };
 
-export default index;
+export default Index;
