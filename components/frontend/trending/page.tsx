@@ -2,13 +2,14 @@ import React from "react";
 import headset from "@/app/assets/headset.png"; // Assuming this is your correct import path
 import Image from "next/image";
 import { Vortex } from "@/components/ui/vortex";
+import Link from "next/link";
 
 const Trending = () => {
   return (
-       <div className="container mx-auto px-4  sm:px-6 md:px-8 md:mt-[0px] mt-auto flex items-center justify-center ">
+       <div className=" mx-auto px-4  sm:px-6 md:px-8 md:mt-[0px] mt-auto flex items-center justify-center ">
       <Vortex
          backgroundColor="black"
-        className="flex items-center  flex-col justify-center px-2 md:px-10 py-4 w-full h-full "
+        className="flex flex-col justify-center px-2 md:px-10 py-4  "
       >
         <div className="md:flex md:flex-row flex-col-reverse md:mt-0 mt-20 md:items-center">
           <div className=" w-1/2">
@@ -16,8 +17,8 @@ const Trending = () => {
               <Image
                 src={headset}
                 alt="headset"
-                 width={400}
-                height={400}
+                 width={300}
+                height={300}
                  className="rounded-lg w-fit h-fit"
               />
             </div>
@@ -30,7 +31,7 @@ const Trending = () => {
               Explore a wide range of headphones and audio accessories.
             </p>
             <button className="mt-6 bg-purple-700 hover:bg-purple-600 text-white px-6 py-3 rounded-lg shadow-md transition duration-300 ease-in-out">
-              Shop Now
+             <Link href='/products'>Shop Now</Link> 
             </button>
           </div>
         </div>
