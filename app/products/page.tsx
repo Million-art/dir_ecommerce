@@ -8,6 +8,7 @@ const ProductsPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [products, setProducts] = useState<MyProduct[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [showCart, setShowCart] = useState(false);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
@@ -38,7 +39,7 @@ const ProductsPage = () => {
 
   return (
     <div className="w-full h-screen bg-gray-100 pb-8">
-      <Navbar />
+      <Navbar  setShowCart={setShowCart}/>
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-4 text-center">Products</h1>
         <div className="relative mb-8">
