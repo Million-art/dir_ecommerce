@@ -4,7 +4,6 @@ import React, { Dispatch, SetStateAction, useState } from 'react';
 import Link from 'next/link';
 import { UserButton, useUser } from '@clerk/nextjs';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import Image from 'next/image';
 
 interface NavbarProps {
   setShowCart: Dispatch<SetStateAction<boolean>>;
@@ -33,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowCart }) => {
 
   return (
     <nav className="bg-gradient-to-r from-black to-purple-500 h-fit px-4 py-2 sticky top-0 mb-0 z-10 text-white">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="  mx-auto flex justify-between items-center">
         <Link href="/" className="font-bold text-2xl flex md:text-3xl relative">
           <h1><b className='text-white'>DIR COMMERCE</b></h1>
         </Link>

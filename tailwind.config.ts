@@ -16,7 +16,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      
+ 
     },
   },
   daisyui: {

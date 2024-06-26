@@ -5,6 +5,8 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 import { ClerkProvider } from "@clerk/nextjs";
 import StoreProvider from "./StoreProvider";
+import Header from "./Header";
+import Footer from "@/components/Footer/page";
 
 export const metadata: Metadata = {
   title: "Dir Commerce",
@@ -17,13 +19,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
-      <body className={inter.className}>
+    <html lang="en">
+      <body className={`${inter.className}`}>
         <ClerkProvider>
-          <StoreProvider>{children}</StoreProvider>
+          <StoreProvider>
+               <Header   />
+              <main className=" h-full w-full">
+                {children}
+              </main>
+           </StoreProvider>
         </ClerkProvider>
         <Toaster position="bottom-center" reverseOrder={false} />
       </body>
+      
     </html>
   );
 }

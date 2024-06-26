@@ -1,35 +1,35 @@
-'use client'
-import React, { useEffect, useState } from 'react';
-import Navbar from '@/components/Navbar/page';
-import Card from '@/components/frontend/Card';
-import { MyProduct } from '@/types/types';
-
+"use client";
+import React, { useEffect, useState } from "react";
+import Card from "@/components/frontend/product/Card";
+import { MyProduct } from "@/types/types";
+import Footer from "@/components/Footer/page";
+ 
 const ProductsPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [products, setProducts] = useState<MyProduct[]>([]);
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const [showCart, setShowCart] = useState(false);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
-  const filteredProducts = products.filter(product =>
+  const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/api/get_products');
+        const response = await fetch("/api/get_products");
         if (!response.ok) {
-          throw new Error('Failed to fetch products');
+          throw new Error("Failed to fetch products");
         }
         const data = await response.json();
         setProducts(data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching products:', error);
+        console.error("Error fetching products:", error);
         setLoading(false);
       }
     };
@@ -38,9 +38,8 @@ const ProductsPage = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen bg-gray-100 pb-8">
-      <Navbar  setShowCart={setShowCart}/>
-      <div className="container mx-auto px-4 py-8">
+    <div className="w-full h-full mb-4  flex flex-col my-20 bg-gray-100 pb-8">
+       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-4 text-center">Products</h1>
         <div className="relative mb-8">
           <input
@@ -79,7 +78,9 @@ const ProductsPage = () => {
           </div>
         )}
       </div>
-    </div>
+      <Footer   />
+
+     </div>
   );
 };
 

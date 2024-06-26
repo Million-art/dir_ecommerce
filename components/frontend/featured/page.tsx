@@ -24,8 +24,8 @@ const Featured = () => {
   return (
     <div className='bg-base-200 py-10 my-20'>
       <h1 className='text-4xl text-purple-700 font-medium text-center'>Featured Products</h1>
-      <div className="hero min-h-screen">
-        <div className="hero-content flex-col lg:flex-row">
+      <div className="hero  ">
+        <div className="hero-content flex-col lg:flex-row ">
           <img
             src={images[currentImageIndex].src}
             alt="Featured Product"
@@ -37,7 +37,7 @@ const Featured = () => {
               Discover the best products that fit your needs. Our featured items are carefully selected to
               provide you with the highest quality and value.
             </p>
-            <button className="btn btn-primary">Shop Now</button>
+            <button className="btn bg-purple-700 text-white">Shop Now</button>
           </div>
         </div>
       </div>

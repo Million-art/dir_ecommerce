@@ -1,11 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
  
  body{
   background-color: white;
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
  
  }
 
@@ -14,9 +15,9 @@
     padding: 8px;
     text-align: left;
  }
-
+ 
  select,textarea,input{
-   @apply w-full px-3 py-2 border border-gray-400 text-black bg-white rounded-md focus:outline-none focus:border-cyan-700
+   @apply w-full px-3 py-2 border border-gray-400 text-black bg-white rounded-md focus:outline-none focus:border-purple-700
  
  }
 

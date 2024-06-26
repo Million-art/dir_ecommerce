@@ -8,7 +8,7 @@ import phone from "@/app/assets/phone.png";
 
 const Category = () => {
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8">
+    <div className="py-12 px-4 mt-20 mb-20 sm:px-6 lg:px-8">
         <h1 className='mb-5 text-4xl  text-center text-purple-700 font-medium'>Category</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Headset Category */}
