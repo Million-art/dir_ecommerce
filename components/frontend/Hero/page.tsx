@@ -16,13 +16,15 @@ const Hero = () => {
       <div className="relative  max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center items-center text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in-up">
           Welcome to Dir Commerce
-           
         </h1>
         <p className="text-lg md:text-xl text-white mb-8 animate-fade-in-up">
           Elevate your electronics experience with our cutting-edge solutions.
         </p>
-        <Link  href='products' className="bg-purple-700 hover:bg-purple-800 text-white font-bold py-3 px-5 md:text-xl rounded animate-pulse">
-           Shop Now
+        <Link
+          href="products"
+          className="bg-purple-700 hover:bg-purple-800 text-white font-bold py-3 px-5 md:text-xl rounded animate-pulse"
+        >
+          Shop Now
         </Link>
       </div>
     </div>

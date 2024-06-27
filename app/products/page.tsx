@@ -1,14 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Card from "@/components/frontend/product/Card";
-import { MyProduct } from "@/types/types";
+import { Product } from "@/types/types";
 import Footer from "@/components/Footer/page";
- 
+
 const ProductsPage = () => {
   const [loading, setLoading] = useState<boolean>(true);
-  const [products, setProducts] = useState<MyProduct[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [showCart, setShowCart] = useState(false);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
@@ -21,7 +20,9 @@ const ProductsPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("/api/get_products");
+        const response = await fetch("/api/get_products", {
+          cache: "force-cache",
+        });
         if (!response.ok) {
           throw new Error("Failed to fetch products");
         }
@@ -39,7 +40,7 @@ const ProductsPage = () => {
 
   return (
     <div className="w-full h-full mb-4  flex flex-col my-20 bg-gray-100 pb-8">
-       <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-4 text-center">Products</h1>
         <div className="relative mb-8">
           <input
@@ -78,9 +79,8 @@ const ProductsPage = () => {
           </div>
         )}
       </div>
-      <Footer   />
-
-     </div>
+      <Footer />
+    </div>
   );
 };
 

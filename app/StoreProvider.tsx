@@ -1,7 +1,8 @@
-'use client'
-import React, { useRef } from 'react';
-import { Provider } from 'react-redux';
-import { store } from '@/redux/Store';
+"use client";
+import React, { useRef } from "react";
+import { Provider } from "react-redux";
+import { store,persistor } from "@/redux/Store";
+import { PersistGate } from "redux-persist/integration/react";
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -17,7 +18,9 @@ const StoreProvider: React.FC<ProvidersProps> = ({ children }) => {
 
   return (
     <Provider store={storeRef.current}>
-      {children}
+      <PersistGate loading={null} persistor={persistor}>
+        {children}
+      </PersistGate>
     </Provider>
   );
 };

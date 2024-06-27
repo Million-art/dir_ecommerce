@@ -58,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ setShowCart }) => {
         </div>
         <div
           className={`flex-col mt-4 pl-5 py-5 gap-4 md:flex md:flex-row md:mt-0 md:gap-5 ${
-            isMenuOpen ? 'bg-black flex absolute bg-dark justify-start z-100' : 'hidden'
+            isMenuOpen ? 'bg-gradient-to-r from-black to-purple-500 flex absolute bg-dark justify-start z-100' : 'hidden'
           } absolute text-white bg-blue mt-96 left-0 right-0 md:bottom-0 md:static`}
         >
           {navItems.map((item, index) => (
@@ -70,7 +70,9 @@ const Navbar: React.FC<NavbarProps> = ({ setShowCart }) => {
           ))}
 
           <div className="text-white text-[32px] relative cursor-pointer" onClick={handleCartClick}>
-            <AiOutlineShoppingCart />
+            <Link href='/cart'>            
+              <AiOutlineShoppingCart />
+            </Link>
             <div className="absolute top-[-15px] text-sm bg-green-500 rounded-full h-fit px-2">{cartCount}</div>
           </div>
 
