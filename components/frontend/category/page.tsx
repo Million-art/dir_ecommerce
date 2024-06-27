@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import headset from "@/app/assets/headset.png";
 import watch from "@/app/assets/watch.png";
@@ -24,9 +25,9 @@ const Category = () => {
           <div className="p-6">
             <h3 className="text-xl  mb-2">Headsets</h3>
             <p className="text-gray-500 mb-4">Immersive audio for gaming and entertainment.</p>
-            <a href="#" className="text-purple-700 hover:text-purple-900 font-semibold">
+            <Link href="/products" className="text-purple-700 hover:text-purple-900 font-semibold">
               Shop Headsets
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -43,9 +44,9 @@ const Category = () => {
           <div className="p-6">
             <h3 className="text-xl  mb-2">Laptops</h3>
             <p className="text-gray-500 mb-4">Power your productivity with our laptop collection.</p>
-            <a href="#" className="text-purple-700 hover:text-purple-900 font-semibold">
+            <Link href="/products" className="text-purple-700 hover:text-purple-900 font-semibold">
               Shop Laptops
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -62,9 +63,9 @@ const Category = () => {
           <div className="p-6">
             <h3 className="text-xl  mb-2">Watches</h3>
             <p className="text-gray-500 mb-4">Stay connected with our stylish and smart watches.</p>
-            <a href="#" className="text-purple-700 hover:text-purple-900 font-semibold">
+            <Link href="/products" className="text-purple-700 hover:text-purple-900 font-semibold">
               Shop Watches
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -81,9 +82,9 @@ const Category = () => {
           <div className="p-6">
             <h3 className="text-xl  mb-2">Phones</h3>
             <p className="text-gray-500 mb-4">Stay connected with our latest smartphones.</p>
-            <a href="#" className="text-purple-700 hover:text-purple-900 font-semibold">
+            <Link href="/products" className="text-purple-700 hover:text-purple-900 font-semibold">
               Shop Phones
-            </a>
+            </Link>
           </div>
         </div>
       </div>

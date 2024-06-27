@@ -4,6 +4,7 @@ import watch from "@/app/assets/watch.png";
 import laptop from "@/app/assets/laptop.png";
 import phone from "@/app/assets/phone.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Featured = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -45,7 +46,7 @@ const Featured = () => {
               are carefully selected to provide you with the highest quality and
               value.
             </p>
-            <button className="btn bg-purple-700 text-white">Shop Now</button>
+            <button className="btn bg-purple-700 text-white"><Link href='/products'> Shop Now</Link></button>
           </div>
         </div>
       </div>

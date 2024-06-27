@@ -1,20 +1,28 @@
 "use client";
 import Footer from "@/components/Footer/page";
 import CardSkeleton from "@/components/frontend/product/CardSkeleton";
-import Navbar from "@/components/Navbar/page";
-import { MyProduct } from "@/types/types";
+import { addToCart } from "@/redux/features/CartSlice";
+import { Product } from "@/types/types";
 import { CldImage } from "next-cloudinary";
 import { useParams } from "next/navigation";
 import React, { useState, useEffect } from "react";
+import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
 
 const ProductDetailsPage: React.FC = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState<MyProduct | null>(null);
+  const [product, setProduct] = useState<Product | null>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
-
+  const dispatch = useDispatch();
   const handleImageLoad = () => {
     setImageLoaded(true);
+    
   };
+  const addProductToCart = (product:Product)=>{
+     dispatch(addToCart(product))
+    toast.success('product added successfully!');
+
+  }
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -24,7 +32,11 @@ const ProductDetailsPage: React.FC = () => {
         setProduct(data);
       } catch (error) {
         console.error("Error fetching product:", error);
+        toast.success('product added successfully!');
+
+        
       }
+
     };
 
     if (id) {
@@ -64,7 +76,10 @@ const ProductDetailsPage: React.FC = () => {
               <p className="mt-4">:{product.description}</p>
             </div>
             <p className="mt-4 text-lg font-bold">Price: ${product.price}</p>
-            <button className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mt-4">
+            <button 
+            className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mt-4"
+            onClick={( )=>addProductToCart(product) }
+            >
               Add to Cart
             </button>
           </div>

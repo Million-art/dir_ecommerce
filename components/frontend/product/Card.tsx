@@ -6,6 +6,7 @@ import { CldImage } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/redux/features/CartSlice";
+import toast from "react-hot-toast";
   
 
 interface CardProps {
@@ -27,7 +28,7 @@ const Card: React.FC<CardProps> = ({ product }) => {
  
   const handleAddToCart = (product: Product) => {
     dispatch(addToCart(product));
-    console.log(product._id);
+    toast.success('product added successfully!');
   };
   return (
     <div className="border p-4 rounded shadow-2xl w-full max-w-[500px] transition duration-300 ease-in-out transform hover:scale-105">
