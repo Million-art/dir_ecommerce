@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DIR E-Commerce
 
-## Getting Started
+## Description  
+DIR E-Commerce is a modern, full-featured online shopping platform designed to provide a seamless shopping experience for users and a robust management system for administrators. Built with scalability and performance in mind, it includes features such as product browsing, cart management, user authentication, and order tracking.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### User Features  
+- Browse and search for products.  
+- View detailed product descriptions and reviews.  
+- Add products to the cart and manage the cart.  
+- Secure user registration and login.  
+- Place orders and track order history.  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Admin Features  
+- Add, update, and delete products.  
+- Manage user accounts and roles.  
+- View and manage orders.  
+- Analytics and reporting for sales performance.  
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### General Features  
+- Responsive design for mobile, tablet, and desktop.  
+- Payment gateway integration for secure transactions.  
+- Built with scalability in mind for high traffic.  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Installation  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prerequisites  
+- Node.js and npm installed on your system.  
+- A database system (e.g., MySQL, MongoDB, or PostgreSQL).  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Steps  
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/Million-art/dir_ecommerce.git
