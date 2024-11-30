@@ -18,7 +18,6 @@ DIR E-Commerce is a modern, full-featured online shopping platform designed to p
 - Add, update, and delete products.  
 - Manage user accounts and roles.  
 - View and manage orders.  
-- Analytics and reporting for sales performance.  
 
 ### General Features  
 - Responsive design for mobile, tablet, and desktop.  
@@ -31,7 +30,6 @@ DIR E-Commerce is a modern, full-featured online shopping platform designed to p
 
 ### Prerequisites  
 - Node.js and npm installed on your system.  
-- A database system (e.g., MySQL, MongoDB, or PostgreSQL).  
 
 ### Steps  
 1. Clone the repository:  
